@@ -1,0 +1,35 @@
+.moth{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  max-width: fit-content;
+
+  color: var(--text-color);
+
+  margin-left: 40px;
+}
+.moth ul{
+  column-count: 3;
+  gap: 0px 50px;
+}
+.moth li {
+  display: flex;
+  cursor: pointer;
+
+  list-style-type: none;
+
+  margin-bottom: 10px;
+}
+.moth li:hover{
+  color: var(--buttonhover-color);
+  transition: var(--tran-03);
+}
+
+.chart{
+  width: 50vw;
+  height: 50vh;
+
+  margin-left: 50px;
+  margin-top: 60px;
+}

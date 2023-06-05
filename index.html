@@ -1,0 +1,109 @@
+<!DOCTYPE html> <!-- позволяет браузеру определить, что за тип документа он открыл -->
+<html lang="ru"> <!-- тег, которым открывается и закрывается вся веб-страница -->
+
+<head> <!-- несет в себе информацию для браузера и не отображается на web-странице -->
+    <meta charset="UTF-8"> <!-- указывает браузеру о необходимости использования кодировки UTF-8 -->
+    <title>Регистрация. ОВК-Монтаж. Анализ Расходов</title>
+    <!-- отображение в заголовке окна браузера или на вкладке страницы -->
+    <link rel="stylesheet" href="Styles/register.css">
+    <!-- Устанавливает связь с внешним документом вроде файла со стилями или со шрифтами. -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="Images/OnlyLogo.png">
+    <script src="https://kit.fontawesome.com/7ef345858d.js" crossorigin="anonymous"></script>
+</head>
+
+<body> <!-- каркас веб-страницы -->
+    <div class="box"> <!--  -->
+        <!-- div является блочным элементом и предназначен для выделения фрагмента документа с целью изменения вида содержимого. -->
+        <div class="form">
+            <h2>Регистрация</h2>
+            <div class="inputBox"> <!-- имя -->
+                <input type="text" required="required" id="userName">
+                <span>Имя</span>
+                <i></i>
+            </div>
+            <div class="inputBox"> <!-- почта -->
+                <input type="text" required="required" id="email">
+                <span>Почта</span>
+                <i></i>
+            </div>
+            <div class="inputBox"> <!-- пароль -->
+                <input type="password" id="myPassword" required="required" onkeyup="CheckPassword(this.value)">
+                <span>Пароль</span>
+                <div class="show">
+                    <img id="ViewImg" src="Images/hide.svg">
+                </div>
+                <!-- <div class="password-strength">
+                        <div class="strength-bar strength-bar--weak">
+                            <div class="strength-partial strength-partial--weak"></div>
+                            <div class="strength-partial strength-partial--fair"></div>
+                            <div class="strength-partial strength-partial--strong"></div>
+                        </div>
+                        <p class="strength-type">
+                            <span class="weak">weak</span>
+                        </p>
+                    </div>  -->
+                <i></i>
+            </div>
+            <div class="inputBox"> <!-- подтверждение пароля -->
+                <input type="password" id="myPassword1" required="required">
+                <span>Подтвердите пароль</span>
+                <div class="show1">
+                    <img id="ViewImg1" src="Images/hide.svg">
+                </div>
+                <i></i>
+            </div>
+            <div class="inputBox"> <!-- код с почты -->
+                <input type="text" required="required" id="code">
+                <span>Код с почты</span>
+                <i></i>
+            </div>
+
+            <!-- <div class="strengthMeter"></div> -->
+
+            <div class="links">
+                <a href="./reset.html">Забыли пароль?</a>
+                <a href="./login.html">Есть аккаунт?</a>
+            </div>
+
+            <button type="button" onclick="sendCode()">Отправить код</button>
+            <input type="button" value="Войти" readonly="readonly" onclick="checkForm()">
+
+        </div>
+    </div>
+
+    <div class="box2">
+        <div class="validationCheck">
+            <ul>
+                <li id="lower">Хотя бы один символ нижнего регистра</li>
+                <li id="upper">Хотя бы один символ верхнего регистра</li>
+                <li id="number">Хотя бы одна цифра</li>
+                <li id="special">Хотя бы один специальный символ</li>
+                <li id="length">Не менее 8 символов</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- <div id="toastBox"></div> -->
+
+    <!-- запрет копирования текста -->
+    <script src="./JS/block-copy.js"></script>
+
+
+    <!-- метод показа пароля -->
+    <script src="./JS/show-password.js"></script>
+
+    <!-- Проверка правильности пароля -->
+    <script src="./JS/checkCorrectPassword.js"></script>
+
+
+    <!-- Проверка заполненности полей,
+             Проверка на совпадение паролей,
+             Переход на другую страницу и уведомления,
+             Проверка и отправка кода почты -->
+    <script src="./JS/register.js">
+    </script>
+    <script src="./JS/validatePassword.js"></script>
+</body>
+
+</html>

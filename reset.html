@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Восстановление пароля. ОВК-Монтаж. Анализ Расходов</title>
+    <link rel="stylesheet" href="./Styles/login.css">
+    <link rel="stylesheet" href="./Styles/resetPage.css">
+    <link rel="stylesheet" href="Styles/register.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="Images/OnlyLogo.png">
+    <script src="https://kit.fontawesome.com/7ef345858d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="box"> <!--  -->
+        <div class="form">
+            <h2>Сброс пароля</h2>
+            <div class="inputBox"> <!-- почта -->
+                <input type="text" required="required" id="email" onkeyup="CheckPassword(this.value)">
+                <span>Почта</span>
+                <i></i>
+                <div class="show">
+                    <img id="ViewImg" src="Images/hide.svg">
+                </div>
+            </div>
+            <div class="inputBox" id="additional"> <!-- код -->
+                <input type="text" id="code" required="required">
+                <span>Код</span>
+                <i></i>
+                <div class="show1">
+                    <img id="ViewImg1" src="Images/hide.svg">
+                </div>
+            </div>
+
+            <div class="links">
+                <a href="./register.html">Нет аккаунта?</a>
+            </div>
+
+            <input class="confirm-button" type="button" value="Отправить код" readonly="readonly" onclick="Confirm()">
+
+        </div>
+
+    </div>
+    <div class="box2">
+        <div class="validationCheck">
+            <ul>
+                <li id="lower">Хотя бы один символ нижнего регистра</li>
+                <li id="upper">Хотя бы один символ верхнего регистра</li>
+                <li id="number">Хотя бы одна цифра</li>
+                <li id="special">Хотя бы один специальный символ</li>
+                <li id="length">Не менее 8 символов</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- запрет копирования текста -->
+    <script src="./JS/block-copy.js"></script>
+
+    <!-- метод показа пароля -->
+    <!-- <script src="./JS/show-password.js"></script> -->
+    <script src="./JS/checkCorrectPassword.js"></script>
+
+    <script src="./JS/validatePassword.js"></script>
+
+    <script src="./JS/reset.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+
+.tables {
+  display: grid;
+  grid-template-columns: 0.2fr 0.2fr 0.2fr;
+  gap: 25px;
+  margin-left: 40px;
+  font-size: 18px;
+  
+  
+}
+.tables > li {
+  cursor: pointer;
+  color: var(--text-color);
+  max-width: fit-content;
+  list-style-type: none;
+
+  /*background: red;
+  border: none;
+  border-radius: 7px;*/
+}
+

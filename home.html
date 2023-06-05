@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!-- <html lang="ru"> -->
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>ОВК-Монтаж. Анализ Расходов</title>
+    <link rel="stylesheet" href="Styles/home.css">
+    <link rel="stylesheet" href="Styles/transitions.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="Images/OnlyLogo.png">
+    <script src="https://kit.fontawesome.com/7ef345858d.js" crossorigin="anonymous"></script>
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <!-- === Transitions === -->
+    <!-- <div class="transition transition-2 is-active"></div> -->
+
+    <!-- === Navbar === -->
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img id="profilePhoto" src="">
+                </span>
+
+                <div class="text header-text">
+                    <span class="name"></span>
+                    <span class="profession">Добро пожаловать</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                <li class="search-box">
+                    <i class='bx bx-search-alt icon'></i>
+                    <input type="search" placeholder="Поиск...">
+                </li>
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="./home.html">
+                            <i class='bx bx-home-alt icon'></i>
+                            <span class="text nav-text">Главная</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="./aboutUs.html">
+                            <i class='bx bx-buildings icon'></i>
+                            <span class="text nav-text">О нас</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="./chart.html">
+                            <i class='bx bx-bar-chart-square icon'></i>
+                            <span class="text nav-text">График Расходов</span>
+                        </a>
+                    </li>
+                    <li class="nav-link" id="userExpenseEdit">
+                        <a href="./user_add_expense.html">
+                            <i class='bx bx-edit-alt icon'></i>
+                            <span class="text nav-text">Редактировать расходы</span>
+                        </a>
+                    </li>
+                    <li class="nav-link" id="adminButton">
+                        <a href="./adminPanel.html">
+                            <i class='bx bx-bug-alt icon'></i>
+                            <span class="text nav-text">Админ панель</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="./settings.html">
+                            <i class='bx bx-cog icon'></i>
+                            <span class="text nav-text">Настройки</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="./login.html">
+                        <i class='bx bx-log-out icon'></i>
+                        <span class="text nav-text">Выход</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="moon-sun">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Темная тема</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+            </div>
+        </div>
+    </nav>
+
+    <section class="home">
+        <div class="text">Главная</div>
+    </section>
+
+    <!-- === Converter === -->
+    <div class="wrapper"> <!-- converter -->
+        <header>Конвертер Валют</header>
+        <form action="#">
+            <div class="amount">
+                <!-- <p>Сумма:</p> -->
+                <label for="amount">Сумма:</label>
+                <input id="amount" type="text" placeholder="Введите сумму" />
+            </div>
+            <div class="drop-list">
+                <div class="from">
+                    <!-- <p for="currency-from">Из валюты:</p> -->
+                    <label for="currency-from">Из валюты:</label>
+                    <div class="select-box">
+                        <!-- <img src="https://flagsapi.com/US/flat/64.png" alt="flag"> -->
+                        <select id="currency-from">
+                            <option value="USD">USD - Доллар США</option>
+                            <option value="EUR">EUR - Евро</option>
+                            <option value="RUB">RUB - Российский рубль</option>
+                            <option value="GBP">GBP - Фунт стерлингов</option>
+                            <option value="UAH">UAH - Украинская гривна</option>
+                            <option value="TRY">TRY - Турецкая лира</option>
+                            <option value="CNY">CNY - Жэньминьби/Юань</option>
+                            <option value="KZT">KZT - Казахстанский тенге</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="icon"><i class="fas fa-exchange-alt"></i></div>
+                <div class="to">
+                    <!-- <p for="currency-to">В валюту:</p> -->
+                    <label for="currency-to">В валюту:</label>
+                    <div class="select-box">
+                        <!-- <img src="https://flagsapi.com/RU/flat/64.png" alt="flag"> -->
+                        <select id="currency-to">
+                            <option value="USD">USD - Доллар США</option>
+                            <option value="EUR">EUR - Евро</option>
+                            <option value="RUB">RUB - Российский рубль</option>
+                            <option value="GBP">GBP - Фунт стерлингов</option>
+                            <option value="UAH">UAH - Украинская гривна</option>
+                            <option value="TRY">TRY - Турецкая лира</option>
+                            <option value="CNY">CNY - Жэньминьби/Юань</option>
+                            <option value="KZT">KZT - Казахстанский тенге</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div id="result" class="exchange-rate"></div>
+            <button id="convert-btn" type="button">Конвертировать</button>
+        </form>
+    </div>
+
+    <!-- === TypeWriter === -->
+    <div class="typewriter">
+        <h1 class="c-h1">
+            Анализ расходов -
+            <!--  -->
+            <br class="css-1q7d01a">
+            оптимизация бизнеса
+            <!--  -->
+
+        </h1>
+        <h1 class="c-h1" id="heading">
+
+        </h1>
+        <p class="c-para-regular info">Наш сайт по Анализу расходов - это мощный инструмент для управления своими
+            финансами. С помощью нашего сайта вы сможете следить за своими расходами, анализировать свои финансовые
+            данные и принимать решения на основе этих данных.</p>
+    </div>
+
+    <!-- === Cusrsor === -->
+    
+
+    <!-- скрипт для иконок // https://ionic.io/ionicons/usage -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script src="./JS/navbar.js"></script>
+    <script src="./JS/home-switch.js"></script>
+    <script src="./JS/country-list.js"></script>
+    <script src="./JS/home_convert.js"></script>
+
+    <!--<script src="./JS/_bower.js"></script>-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="//unpkg.com/typewriter-effect/dist/core.js"></script>
+    <script src="./JS/home-typewriter.js"></script>
+
+    <script src="./JS/back-particles.js"></script>
+    
+    <!-- <script src="./JS/transitions.js"></script> -->
+    <!-- <script src="JS/save-theme.js"></script>  -->
+</body>
+
+</html>

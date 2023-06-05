@@ -1,0 +1,558 @@
+/* Google Font Import - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* === Colors === */
+    --body-color: #e4e9f7;
+    --sidebar-color: #fff;
+    --primary-color: #695cfe;
+    --primary-color-light: #f6f5ff;
+    --toggle-color: #ddd;
+    --text-color: #707070;
+    --buttonhover-color: #4534fe;
+    --buttonhover-color-light: #ebeaf4;
+    --text-h-color: #181b38;
+    --text-about-color: #b7b4bb;
+
+    /* === Transition === */
+    --tran-02: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+
+    /* === CURSOR === */
+    --cursor-1-bg: #ffffff;
+    --cursor-1-bg-line: #eef1f4;
+}
+
+body {
+    height: 100vh;
+    background: var(--body-color);
+    transition: var(--tran-05);
+}
+
+body.dark {
+    /* === Colors === */
+    --body-color: #18191a;
+    --sidebar-color: #242526;
+    --primary-color: #3a3b3c;
+    --primary-color-light: #3a3b3c;
+    --toggle-color: #fff;
+    --text-color: #ccc;
+    --buttonhover-color: #2a2a2b;
+    --buttonhover-color-light: #303132;
+    --text-h-color: #e2e9f5;
+}
+
+.sidebar.close {
+    width: 88px;
+}
+
+/* === Sidebar  === */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px;
+    padding: 10px 14px;
+    background: var(--sidebar-color);
+    transition: var(--tran-05);
+    z-index: 100;
+}
+
+/* === Resuable CSS  === */
+.sidebar .text {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: var(--tran-03);
+    white-space: nowrap;
+    opacity: 1;
+}
+
+.sidebar.close .text {
+    opacity: 0;
+}
+
+.sidebar .image {
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar li {
+    height: 50px;
+
+    margin-top: 10px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar li .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    font-size: 20px;
+}
+
+.sidebar li .icon,
+.sidebar li .text {
+    color: var(--text-color);
+    transition: var(--tran-02);
+}
+
+.sidebar header {
+    position: relative;
+}
+
+.sidebar .image-text img {
+    width: 40px;
+    border-radius: 6px;
+
+}
+
+.sidebar header .image-text {
+    display: flex;
+    align-items: center;
+}
+
+header .image-text .header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-text .name {
+    font-weight: 600;
+}
+
+.header-text .profession {
+    margin-top: -2px;
+}
+
+.sidebar header .toggle {
+    position: absolute;
+    top: 50%;
+    right: -25px;
+    transform: translateY(-50%) rotate(180deg);
+    height: 25px;
+    width: 25px;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--sidebar-color);
+    font-size: 22px;
+    transition: var(--tran-03);
+    /*z-index: 100;*/
+}
+
+.sidebar.close header .toggle {
+    transform: translateY(-50%);
+}
+
+body.dark .sidebar header .toggle {
+    /*transform: rotate(180deg);*/
+    color: var(--text-color);
+}
+
+.sidebar .menu {
+    margin-top: 35px;
+}
+
+.sidebar .search-box {
+    background: var(--primary-color-light);
+    border-radius: 6px;
+    transition: var(--tran-05);
+}
+
+.search-box input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    background: var(--primary-color-light);
+    transition: var(--tran-05);
+    color: var(--text-color);
+}
+
+.sidebar li a {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: var(--tran-04);
+}
+
+.sidebar li a:hover {
+    background: var(--primary-color);
+}
+
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text {
+    color: var(--sidebar-color);
+}
+
+body.dark .sidebar li a:hover .icon,
+body.dark .sidebar li a:hover .text {
+    color: var(--text-color);
+}
+
+.sidebar .menu-bar {
+    height: calc(100% - 50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-bar .mode {
+    position: relative;
+    border-radius: 6px;
+    background: var(--primary-color-light);
+}
+
+.menu-bar .mode .moon-sun {
+    height: 50px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-bar .mode i {
+    position: absolute;
+    transition: var(--tran-03);
+}
+
+.menu-bar .mode i.sun {
+    opacity: 0;
+}
+
+body.dark .menu-bar .mode i.sun {
+    opacity: 1;
+}
+
+body.dark .menu-bar .mode i.moon {
+    opacity: 0;
+}
+
+.menu-bar .mode .toggle-switch {
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-width: 60px;
+    cursor: pointer;
+    border-radius: 6px;
+    background: var(--primary-color-light);
+    transition: var(--tran-05);
+}
+
+.toggle-switch .switch {
+    position: relative;
+    height: 22px;
+    width: 44px;
+    border-radius: 25px;
+    background: var(--toggle-color);
+    transition: var(--tran-05);
+}
+
+.switch::before {
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background: var(--sidebar-color);
+    transition: var(--tran-03);
+}
+
+body.dark .switch::before {
+    left: 24px;
+}
+
+.home {
+    position: relative;
+    height: 100vh;
+    left: 250px;
+    width: calc(100% - 250px);
+    background: var(--body-color);
+    transition: var(--tran-05);
+}
+
+.home .text {
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 8px 40px;
+}
+
+.sidebar.close~.home {
+    left: 88px;
+    width: calc(100% - 88px);
+}
+
+/* converter css */
+.wrapper {
+    position: relative;
+    width: 370px;
+    padding: 30px;
+    /*top: 260px;*/
+    bottom: 90%;
+    left: 290px;
+    border-radius: 7px;
+    background: var(--sidebar-color);
+    transition: var(--tran-05);
+    z-index: 99;
+}
+
+.sidebar.close~.wrapper {
+    left: 130px;
+}
+
+.wrapper header {
+    font-size: 28px;
+    font-weight: 500;
+    text-align: center;
+    color: var(--text-color);
+    transition: var(--tran-03);
+}
+
+.wrapper form {
+    margin: 40px 0 20px 0;
+}
+
+form :where(input, select, button) {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+form label {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: var(--text-color);
+    transition: var(--tran-03);
+}
+
+form input {
+    height: 50px;
+    font-size: 17px;
+    padding: 0 15px;
+    border: 1px solid var(--body-color);
+    background: var(--sidebar-color);
+    color: var(--text-color);
+    transition: var(--tran-05);
+}
+
+form input:focus {
+    padding: 0 14px;
+    border: 2px solid #675afe;
+}
+
+form .drop-list {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.drop-list .select-box {
+    display: flex;
+    height: 45px;
+    width: 115px;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--body-color);
+    transition: var(--tran-03);
+    /* background: red;  */
+}
+
+.select-box select {
+    /*width: auto;*/
+    cursor: pointer;
+    width: 54px;
+    font-size: 16px;
+    margin: 0 -5 0 5px;
+    background: var(--sidebar-color);
+    color: var(--text-color);
+    transition: var(--tran-05);
+}
+
+.select-box img {
+    max-width: 25px;
+}
+
+.drop-list .icon {
+    font-size: 22px;
+    cursor: pointer;
+    margin-top: 30px;
+    color: var(--text-color);
+    transition: var(--tran-04);
+}
+
+form .exchange-rate {
+    font-size: 17px;
+    margin: 20px 0 30px;
+    color: var(--text-color);
+    transition: var(--tran-03);
+}
+
+form button {
+    height: 52px;
+    color: #fff;
+    font-size: 17px;
+    cursor: pointer;
+    background: var(--primary-color);
+    transition: var(--tran-03);
+}
+
+form button:hover {
+    background: var(--buttonhover-color);
+}
+
+/*===========TYPEWRITER============*/
+.typewriter {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: auto;
+    max-width: 1000px;
+    padding-right: 20px;
+    padding-left: 20px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+    margin-left: 140px;
+    position: fixed;
+    top: 100px;
+    left: 40%;
+
+    z-index: 98;
+}
+
+.c-h1 {
+    /*position: relative;*/
+    /*display: block;*/
+    z-index: 3;
+    /*margin-top: 20px;*/
+    /*margin-bottom: 20px;*/
+    /*margin-left: 140px;*/
+    font-family: neo-sans, "Inter var", "system-ui", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /*color: var(--text-color);*/
+    color: var(--text-h-color);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    letter-spacing: calc(-0.5em / 62);
+    font-size: 36px;
+    font-size: calc(36rem / 16);
+    line-height: 1.2;
+
+    font-size: 62px;
+    font-size: calc(62rem / 16);
+    line-height: 72px;
+    line-height: calc(72 / 62);
+
+    transition: var(--tran-04);
+}
+
+/*.Typewriter__wrapper{
+    color: var(--primary-color);
+    transition: var(--tran-04);
+}*/
+.Typewriter__cursor {
+    display: inline-block;
+    width: 8px;
+    height: 60px;
+    background-color: var(--primary-color);
+    color: transparent;
+    line-height: 52px;
+    -webkit-animation: blink 1000ms steps(1, end) infinite;
+    animation: blink 1000ms steps(1, end) infinite;
+    transition: var(--tran-04);
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.info {
+    position: relative;
+    z-index: 2;
+    max-width: 650px;
+    margin-top: 15px;
+}
+
+.c-para-regular {
+    color: var(--text-color);
+    font-size: 18px;
+    font-size: calc(18rem / 16);
+    font-weight: 400;
+    line-height: 1.8;
+    transition: var(--tran-04);
+}
+
+/* === BACKGROUND PARTICLES === */
+.pentahedron {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    fill: #3E82F7;
+}
+
+.point {
+    fill: #8491A3;
+}
+
+.rhombus {
+    fill: #2DA94F;
+    stroke: #2DA94F;
+}
+
+.x {
+    fill: #FDBD00;
+}
+
+.circle {
+    fill: #ED412D;
+}
+
+svg {
+    top: 0;
+    left: 0;
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    transform: translateZ(0px);
+    z-index: 1;
+}

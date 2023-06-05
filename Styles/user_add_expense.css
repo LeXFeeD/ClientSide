@@ -1,0 +1,82 @@
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  max-width: fit-content;
+
+  color: var(--text-color);
+
+  margin-left: 40px;
+}
+
+.fields > li {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.fields input{
+  height: 40px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 6px; 
+  font-size: 16px;
+  font-weight: 500;
+  text-indent: 10px;
+  color: var(--text-color);   
+  background: var(--primary-color-light);
+  transition: var(--tran-05);
+}
+.fields button{
+  height: 40px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 6px; 
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-color);  
+  cursor: pointer; 
+  background: var(--primary-color-light);
+  transition: var(--tran-05);
+}
+.fields button:hover{
+  background: var(--buttonhover-color);
+  color: #fff;
+  transition: var(--tran-05);
+}
+
+.listData {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+
+  color: var(--text-color);
+}
+
+.listData li {
+  list-style-type: none;
+}
+
+.listData li {
+  margin-top: 10px;
+}
+
+.listData * ul{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, min(100px));
+  justify-items: center;
+  gap: 120px;
+
+  margin-left: 0px;
+}
+
+.listData li:first-child  li:first-child {
+  grid-column-start: 2;
+}
+
+.listData > li:not(:first-child){
+  cursor: pointer;
+}

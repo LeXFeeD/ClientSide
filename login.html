@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Вход. ОВК-Монтаж. Анализ Расходов</title>
+    <link rel="stylesheet" href="Styles/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="Images/OnlyLogo.png">
+    <script src="https://kit.fontawesome.com/7ef345858d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="box"> <!--  -->
+        <div class="form">
+            <h2>Авторизация</h2>
+            <div class="inputBox"> <!-- имя -->
+                <input type="text" required="required" id="userName">
+                <span>Имя</span>
+                <i></i>
+            </div>
+            <div class="inputBox"> <!-- почта -->
+                <input type="text" required="required" id="email">
+                <span>Почта</span>
+                <i></i>
+            </div>
+            <div class="inputBox"> <!-- пароль -->
+                <input type="password" id="myPassword" required="required">
+                <span>Пароль</span>
+                <div class="show">
+                    <img id="ViewImg" src="Images/hide.svg">
+                </div>
+                <i></i>
+            </div>
+
+            <div class="links">
+                <a href="./reset.html">Забыли пароль?</a>
+                <a href="./register.html">Нет аккаунта?</a>
+            </div>
+
+            <input type="button" value="Войти" readonly="readonly" onclick="SignIn()">
+
+        </div>
+    </div>
+
+    <!-- запрет копирования текста -->
+    <script src="./JS/block-copy.js"></script>
+    <!-- метод показа пароля -->
+    <script src="./JS/show-password.js"></script>
+    <script src="./JS/login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+.settings{
+    position: relative;
+    height: 90vh;
+    left: 250px;
+    width: calc(100% - 250px);
+    background: var(--body-color);
+    transition: var(--tran-05);
+}
+.settings .text{
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--text-color);
+    padding: 8px 40px;
+}
+.sidebar.close ~ .settings{
+    left: 88px;
+    width: calc(100% - 88px);
+}
+
+.settings_fields{
+    position: fixed;
+    top: 12%;
+    left: 290px;
+    height: 100%;
+    width: 100%;
+    transition: var(--tran-05);
+}
+.settings_fields input#login{
+    height: 40px;
+    width: 12%;
+    outline: none;
+    border: none;
+    border-radius: 6px; 
+    font-size: 16px;
+    font-weight: 500;
+    text-indent: 10px;
+    color: var(--text-color);   
+    background: var(--primary-color-light);
+}
+.settings_fields input#password{    
+    height: 40px;
+    width: 12%;
+    outline: none;
+    border: none;
+    border-radius: 6px; 
+    font-size: 16px;
+    font-weight: 500;
+    text-indent: 10px;
+    color: var(--text-color);   
+    background: var(--primary-color-light);    
+}
+.sidebar.close ~ .settings_fields{
+    left: 130px;
+    width: calc(100% - 88px);
+}
+.btn_image{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 12%;
+    height: 40px;
+    top: 1.2%;
+    border-radius: 7px;
+    background: var(--primary-color-light);
+    color: var(--text-color);
+    transition: var(--tran-05);
+    cursor: pointer;
+}
+.btn_image span{
+    font-size: 16px;
+    font-weight: 500;
+    text-indent: 10px;
+}
+.btn_image .icon{  
+    position: absolute;
+    left: 80%;  
+    min-width: 60px;
+    font-size: 20px;
+}
+.btn_image:hover{
+    background: var(--buttonhover-color-light);
+}
+.settings_fields button{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24.2%;
+    height: 40px;
+    top: 2.5%;
+    outline: none;
+    border: none;
+    border-radius: 7px;
+    font-size: 16px;
+    font-weight: 500;
+    background: var(--primary-color);
+    color: #fff;
+    transition: var(--tran-05);
+    cursor: pointer;
+}
+.settings_fields button:hover{
+    background: var(--buttonhover-color);
+}
+/*.btn_image{
+    color: var(--text-color);
+    margin-left: 16.5%;
+    cursor: pointer;
+}*/
