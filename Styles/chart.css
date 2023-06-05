@@ -1,7 +1,10 @@
 .moth{
+  position: fixed;
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  top: 110px;
 
   max-width: fit-content;
 
@@ -17,6 +20,8 @@
   display: flex;
   cursor: pointer;
 
+  font-size: 18px;
+
   list-style-type: none;
 
   margin-bottom: 10px;
@@ -27,9 +32,10 @@
 }
 
 .chart{
-  width: 50vw;
-  height: 50vh;
+  width: 30vw;
+  height: 60vh;
 
-  margin-left: 50px;
-  margin-top: 60px;
+  margin-left: 48%;
+  margin-top: 45px;
+  top: 0;
 }

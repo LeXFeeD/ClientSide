@@ -64,7 +64,7 @@
                     <li class="nav-link" id="userExpenseEdit">
                         <a href="./user_add_expense.html">
                             <i class='bx bx-edit-alt icon'></i>
-                            <span class="text nav-text">Редактировать расходы</span>
+                            <span class="text nav-text">Изменить расходы</span>
                         </a>
                     </li>
                     <li class="nav-link" id="adminButton">
@@ -110,18 +110,40 @@
     </section>
 
     <div class="settings_fields">
-        <input type="text" id="login" placeholder="Введите имя">
-        <input type="text" id="password" placeholder="Введите новый пароль">
+        <input type="text" id="login" class="form__input" placeholder="Введите имя">
+        <input type="text" id="password" class="form__input" placeholder="Введите новый пароль">
         <div for="file" class="btn_image" onclick="document.getElementById('image').click();">
             <i class='bx bx-cloud-upload icon'></i>
-            <span >Выберите картинку</span>
+            <span>Выберите картинку</span>
             <input type="file" style="display:none;" id="image" accept="image/*">
         </div>
         <button id="change">Сохранить</button>
         <img src="" id="img">
     </div>
 
-    
+    <!-- <div class="settings_card">
+        <header>Настройки Профиля</header>
+        
+    </div> -->
+
+    <!--Waves Container-->
+    <div>
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+            </g>
+        </svg>
+    </div>
+    <!--Waves end-->
+
+    <!-- <img class="stng_man" src="./Images/Settings_Man.png"> -->
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

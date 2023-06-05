@@ -10,7 +10,7 @@
 
 :root {
     /* === Colors === */
-    --body-color: #e4e9f7;
+    --body-color: #E4EBF5;
     --sidebar-color: #fff;
     --primary-color: #695cfe;
     --primary-color-light: #f6f5ff;
@@ -21,6 +21,11 @@
     --text-h-color: #181b38;
     --text-about-color: #b7b4bb;
 
+    --white: #FFFFFF;
+    --greyLight-2: #c8d0e7;
+    --greyLight-3: #bec8e4;
+    --greyDark: #9baacf;
+
     /* === Transition === */
     --tran-02: all 0.2s ease;
     --tran-03: all 0.3s ease;
@@ -30,6 +35,11 @@
     /* === CURSOR === */
     --cursor-1-bg: #ffffff;
     --cursor-1-bg-line: #eef1f4;
+}
+
+::selection{ /* изменение цвета выделения */
+    background: #9dd4f0;
+    color: #fff;
 }
 
 body {
@@ -68,7 +78,7 @@ body.dark {
     z-index: 100;
 }
 
-/* === Resuable CSS  === */
+/* === Reusable CSS  === */
 .sidebar .text {
     font-size: 16px;
     font-weight: 500;
@@ -450,7 +460,7 @@ form button:hover {
     flex-wrap: wrap;
     align-items: flex-start;
 
-    margin-left: 140px;
+    margin-left: 180px;
     position: fixed;
     top: 100px;
     left: 40%;
@@ -510,6 +520,7 @@ form button:hover {
     z-index: 2;
     max-width: 650px;
     margin-top: 15px;
+    /*text-align: center;*/
 }
 
 .c-para-regular {
@@ -555,4 +566,47 @@ svg {
     position: fixed;
     transform: translateZ(0px);
     z-index: 1;
+}
+
+/* === ContactInfo  === */
+.contact-info {
+    position: absolute;
+    top: 87%;
+    left: 34%;
+    /*width: 90%;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+    font-size: 18px;    
+    text-align: center;
+
+    transition: var(--tran-04);
+
+    z-index: 997;
+  }
+
+  .form-container > div{
+    margin:10px 70px;
+  }
+
+  /*.numberphone {
+    
+  }
+  
+  .adress {
+
+  }*/
+  .number{
+    color: var(--text-color);
+    text-decoration: none
+  }
+  .maps{
+    color: var(--text-color);
+    text-decoration: none
+  }
+.sidebar.close~.contact-info{
+    /*width: 100%;*/
+    left: 33%;
 }

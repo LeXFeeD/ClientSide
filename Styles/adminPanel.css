@@ -1,11 +1,13 @@
-
 .tables {
   display: grid;
-  grid-template-columns: 0.2fr 0.2fr 0.2fr;
+  grid-template-columns: repeat(5, 0.2fr);
   gap: 25px;
   margin-left: 40px;
   font-size: 18px;
   
+  margin-top: 40px;
+
+  justify-content: center;
   
 }
 .tables > li {
@@ -14,8 +16,33 @@
   max-width: fit-content;
   list-style-type: none;
 
-  /*background: red;
-  border: none;
-  border-radius: 7px;*/
+  border: 1px solid var(--primary-color);
+  border-radius: 7px;
+  padding: 5px;
+}
+.tables > li:hover{
+  color: var(--primary-color);
 }
 
+.infoText{
+  position: relative;
+  justify-content: center;
+  top: 40%;
+  /*left: 27%;*/
+  width: calc(100% - 88px);
+
+  text-align: center;
+  color: var(--text-color);
+
+  transition: var(--tran-05);
+}
+.sidebar.close~.infoText{
+  left: 88px;
+  width: calc(100% - 88px);
+}
+.howToUse{
+  font-size: 35px;
+}
+.tutorial{
+  font-size: 18px;
+}
