@@ -48,10 +48,11 @@
   transition: var(--tran-05);
 }
 
-.listData {
+/*.listData {
   display: flex;
   flex-direction: column;
   margin-left: 40px;
+  
 
   color: var(--text-color);
 }
@@ -79,7 +80,7 @@
 
 .listData > li:not(:first-child){
   cursor: pointer;
-}
+}*/
 
 .description{
   position: absolute;
@@ -120,4 +121,63 @@
 
 .scroll-container::-webkit-scrollbar-track:hover {
   background-color: #e5e5e5; /* Цвет фона полосы прокрутки при наведении */
+}
+
+/* TABLE */
+
+.listData {
+  display: table-row-group;
+  position: absolute;
+  
+  margin-top: 3%;
+  margin-left: 40px;
+  color: var(--text-color);
+
+  table-layout: fixed;
+
+}
+
+.firstli {
+  display: table-row;
+}
+
+.tableHeader {
+  display: table-cell;
+  font-weight: bold;
+  background-color: var(--primary-color-light);
+  /*padding: 5px;*/
+  
+}
+
+.firstul {
+  display: table;
+  width: 80%;
+
+  margin-left: 250px;
+
+  table-layout: fixed;
+}
+
+.secondli {
+  display: table-cell;
+  padding: 5px;
+ 
+  text-align: center;
+  vertical-align: middle;
+}
+
+.thirdli {
+  display: table-row;
+  cursor: pointer;
+}
+
+.secondul {
+  display: table;
+  width: 100%;
+
+  table-layout: fixed;
+}
+
+li:not(.firstli):hover {
+  background-color: #f5f5f5;
 }

@@ -14,13 +14,13 @@
 }
 .moth ul{
   column-count: 3;
-  gap: 0px 50px;
+  gap: 0px 100px;
 }
 .moth li {
   display: flex;
   cursor: pointer;
 
-  font-size: 18px;
+  font-size: 20px;
 
   list-style-type: none;
 

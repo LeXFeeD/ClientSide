@@ -105,20 +105,34 @@ fetch("https://ovk-serverside.onrender.com/tableGetData", {
       columnsName.shift();
 
       let primaryList = document.createElement("li");
+      primaryList.classList.add("firstli");
+      let tableDiv = document.createElement("div");
+      tableDiv.classList.add("tableHeader");
       let containerList = document.createElement("ul");
+      containerList.classList.add("firstul");
+      
+      /*const firstul = document.getElementsByClassName("firstul")[0];
+      firstul.appendChild(tableDiv);
+      const  titleTable =  document.getElementsByClassName("firstul")[0];*/
+
       for (let i = 0; i < keys.length; i++) {
         const list = document.createElement("li");
+        list.classList.add("secondli");
         list.innerText = keys[i];
 
         containerList.appendChild(list);
       }
 
-      primaryList.appendChild(containerList);
-      listData.appendChild(primaryList);
+      tableDiv.appendChild(containerList); // div
+      primaryList.appendChild(tableDiv); // li
+      listData.appendChild(primaryList); // ul
+
 
       for (let i = 0; i < tableData.length; i++) {
         primaryList = document.createElement("li");
+        primaryList.classList.add("thirdli");
         containerList = document.createElement("ul");
+        containerList.classList.add("secondul");
 
         const img = tableData[i]?.Photo;
 
@@ -148,6 +162,7 @@ fetch("https://ovk-serverside.onrender.com/tableGetData", {
 
         for (let j = 0; j < r.length - 1; j++) {
           const list = document.createElement("li");
+          list.classList.add("secondli");
           if (r[j] === img) {
             const imgObject = document.createElement("img");
             imgObject.src = "data:image/png;base64," + img;
@@ -185,7 +200,7 @@ function getTableDescription(tableName) {
   } else if (tableName === "User_Roles") {
     tableDescription = "Таблица с ролями пользователей.\nName_Type - необходимо ввести название роли.";
   } else if (tableName === "Users") {
-    tableDescription = "Таблица с пользователями";
+    tableDescription = "Таблица пользователи.\nReset_code - при необходимости записать код для восстановления пароля.\nPassword - необходимо ввести пароль пользователя.\nLogin - необходимо ввести логин пользователя.\nid_Role - необходимо ввести id роли пользователя, посмотреть его можно в таблице User_Roles.\nEmail - необходимо ввести почту пользователя.\nКартинки можно загружать размером не более 2Мб!";
   }
 
   return tableDescription;
