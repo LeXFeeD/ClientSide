@@ -537,7 +537,7 @@ form button:hover {
     position: absolute;
     width: 100%;
     height: 100%;
-    fill: #3E82F7;
+    fill: #8e85ff;
 }
 
 .point {
@@ -545,16 +545,16 @@ form button:hover {
 }
 
 .rhombus {
-    fill: #2DA94F;
-    stroke: #2DA94F;
+    fill: #7cbcfe;
+    stroke: #7cbcfe;
 }
 
 .x {
-    fill: #FDBD00;
+    fill: #ffdf71;
 }
 
 .circle {
-    fill: #ED412D;
+    fill: #bb7cfe;
 }
 
 svg {

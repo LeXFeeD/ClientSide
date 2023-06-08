@@ -142,12 +142,8 @@ fetch("https://ovk-serverside.onrender.com/tableGetData", {
         }*/
         //-----
         
-        /*let r;
-        Object.keys(tableData[i]).find((k) => {
-          r += tableData[i][k] + " ";
-        });
-        r = r.replace("undefined", "").split(" ");*/
-        const r = Object.values(tableData[i]).filter(value => value !== undefined && value !== null && value !== "");
+        //const r = Object.values(tableData[i]).filter(value => value !== undefined && value !== null && value !== "");
+        const r = Object.values(tableData[i]);
         const joinedString = r.join(" ");
 
         for (let j = 0; j < r.length - 1; j++) {

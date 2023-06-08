@@ -10,9 +10,9 @@ toggleButton.addEventListener('click', function () {
     localStorage.setItem('sidebarState', sidebar.classList.contains('close'));
 });
 
-searchBtn.addEventListener("click", () => {
+/*searchBtn.addEventListener("click", () => {
     sidebar.classList.remove("close");
-});
+});*/
 
 const isSidebarClosed = JSON.parse(localStorage.getItem('sidebarState'));
 
