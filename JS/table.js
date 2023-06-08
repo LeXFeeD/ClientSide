@@ -86,9 +86,19 @@ fetch("https://ovk-serverside.onrender.com/tableGetData", {
       console.log(data.tableData);
 
       const listData = document.getElementsByClassName("listData")[0];
+      const fieldsData = document.getElementsByClassName("fields")[0];
 
       const tableData = data.tableData;
       const keys = data.keys;
+
+      // Получение текста-описания таблицы
+      const tableDescription = getTableDescription(localStorage.getItem("tableName"));
+
+      // Добавление текста-описания в HTML
+      const descriptionElement = document.createElement("p");
+      descriptionElement.innerText = tableDescription;
+      descriptionElement.classList.add("description"); // Добавление CSS-класса
+      fieldsData.appendChild(descriptionElement);
 
       firstColum.push(keys[0]);
       columnsName = data.keys;
@@ -131,6 +141,12 @@ fetch("https://ovk-serverside.onrender.com/tableGetData", {
           containerList.append(list);
         }*/
         //-----
+        
+        /*let r;
+        Object.keys(tableData[i]).find((k) => {
+          r += tableData[i][k] + " ";
+        });
+        r = r.replace("undefined", "").split(" ");*/
         const r = Object.values(tableData[i]).filter(value => value !== undefined && value !== null && value !== "");
         const joinedString = r.join(" ");
 
@@ -139,7 +155,7 @@ fetch("https://ovk-serverside.onrender.com/tableGetData", {
           if (r[j] === img) {
             const imgObject = document.createElement("img");
             imgObject.src = "data:image/png;base64," + img;
-            imgObject.style = "width:150px; height:100px";
+            imgObject.style = "width:100px; height:100px";
             list.appendChild(imgObject);
           } else {
             list.innerText = r[j];
@@ -152,13 +168,32 @@ fetch("https://ovk-serverside.onrender.com/tableGetData", {
         containerList.append(lastListItem);
         //-----
 
-        primaryList.setAttribute("onclick", `selectedData('${r}')`);
+        primaryList.setAttribute("onclick", `selectedData('${r}')`); // {r} or {joinedString}
 
         primaryList.appendChild(containerList);
         listData.appendChild(primaryList);
       }
     }
   });
+
+// Функция для получения текста-описания таблицы
+function getTableDescription(tableName) {
+  // Пример:
+  let tableDescription = "";
+  if (tableName === "Date_Expenses") {
+    tableDescription = "Таблица с датами расходов.\nDate_Exp - необходимо ввести дату в формате:\nГГ-ММ-ДД";
+  } else if (tableName === "Expenses") {
+    tableDescription = "Таблица с расходами.\nSum_Exp - необходимо ввести сумму.\nName_Exp - необходимо ввести название расхода.\nid_User - необходимо ввести id пользователя, посмотреть его можно в таблице Users.\nid_ExpType - необходимо ввести id Типа Расхода, посмотреть его можно в таблице Type_Expenses.\nDate_Exp - необходимо ввести id Даты Расхода, посмотреть его можно в таблице Date_Expenses";
+  } else if (tableName === "Type_Expenses") {
+    tableDescription = "Таблица с типами расходов.\nName_Type - необходимо ввести категорию расхода.";
+  } else if (tableName === "User_Roles") {
+    tableDescription = "Таблица с ролями пользователей.\nName_Type - необходимо ввести название роли.";
+  } else if (tableName === "Users") {
+    tableDescription = "Таблица с пользователями";
+  }
+
+  return tableDescription;
+}
 
 function selectedData(data) {
   //data = data.slice(0, -1).split(",");
