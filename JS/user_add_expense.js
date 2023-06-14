@@ -86,6 +86,7 @@ fetch("https://ovk-serverside.onrender.com/tableGetData", {
       console.log(data.tableData);
 
       const listData = document.getElementsByClassName("listData")[0];
+      const fieldsData = document.getElementsByClassName("fields")[0];
 
       const tableData = data.tableData;
       const keys = data.keys;
@@ -115,6 +116,7 @@ fetch("https://ovk-serverside.onrender.com/tableGetData", {
           continue;
         }
         const list = document.createElement("li");
+        list.classList.add("secondli");
         list.innerText = keys[i];
 
         containerList.appendChild(list);
@@ -132,7 +134,8 @@ fetch("https://ovk-serverside.onrender.com/tableGetData", {
 
         const img = tableData[i]?.Photo;
 
-        const r = Object.values(tableData[i]).filter(value => value !== undefined && value !== null && value !== "");
+        //const r = Object.values(tableData[i]).filter(value => value !== undefined && value !== null && value !== "");
+        const r = Object.values(tableData[i]);
 
         if (tableData[i].id_User != localStorage.getItem('userId')) {
           continue;
@@ -142,6 +145,7 @@ fetch("https://ovk-serverside.onrender.com/tableGetData", {
 
         for (let j = 0; j < r.length - 1; j++) {
           const list = document.createElement("li");
+          list.classList.add("secondli");
           if (r[j] === img) {
             const imgObject = document.createElement("img");
             imgObject.src = "data:image/png;base64," + img;
