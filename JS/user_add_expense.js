@@ -90,12 +90,26 @@ fetch("https://ovk-serverside.onrender.com/tableGetData", {
       const tableData = data.tableData;
       const keys = data.keys;
 
+      // Получение текста-описания таблицы
+      const tableDescription = getTableDescription(localStorage.getItem("tableName"));
+
+      // Добавление текста-описания в HTML
+      const descriptionElement = document.createElement("p");
+      descriptionElement.innerText = tableDescription;
+      descriptionElement.classList.add("description"); // Добавление CSS-класса
+      fieldsData.appendChild(descriptionElement);
+
       firstColum.push(keys[0]);
       columnsName = data.keys;
       columnsName.shift();
 
       let primaryList = document.createElement("li");
+      primaryList.classList.add("firstli");
+      let tableDiv = document.createElement("div");
+      tableDiv.classList.add("tableHeader");
       let containerList = document.createElement("ul");
+      containerList.classList.add("firstul");
+
       for (let i = 0; i < keys.length; i++) {
         if (keys[i] == 'id_User') {
           continue;
@@ -106,13 +120,15 @@ fetch("https://ovk-serverside.onrender.com/tableGetData", {
         containerList.appendChild(list);
       }
 
-      primaryList.appendChild(containerList);
-      listData.appendChild(primaryList);
+      tableDiv.appendChild(containerList); // div
+      primaryList.appendChild(tableDiv); // li
+      listData.appendChild(primaryList); // ul
 
       for (let i = 0; i < tableData.length; i++) {
-
         primaryList = document.createElement("li");
+        primaryList.classList.add("thirdli");
         containerList = document.createElement("ul");
+        containerList.classList.add("secondul");
 
         const img = tableData[i]?.Photo;
 
@@ -149,6 +165,17 @@ fetch("https://ovk-serverside.onrender.com/tableGetData", {
       }
     }
   });
+
+// Функция для получения текста-описания таблицы
+function getTableDescription(tableName) {
+  // Пример:
+  let tableDescription = "";
+  if (tableName === "Expenses") {
+    tableDescription = "Таблица с расходами.\nSum_Exp - необходимо ввести сумму.\nName_Exp - необходимо ввести название расхода.\nid_ExpType - необходимо ввести id Типа Расхода: 1 - Рестораны и кафе; 2 - Супермаркеты; 3 - ЖКХ,связь,интернет; 4 - Транспорт; 5 - Онлайн-маркеты; 6 - Путешествия; 7 - Развлечения и хобби; 8 - Прочие расходы; 9 - Комиссия\nDate_Exp - необходимо ввести id Даты Расхода: 1 - январь, ... , 12 - декабрь";
+  }
+
+  return tableDescription;
+}
 
 function selectedData(data) {
   //data = data.slice(0, -1).split(",");
