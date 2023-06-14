@@ -134,8 +134,8 @@ fetch("https://ovk-serverside.onrender.com/tableGetData", {
 
         const img = tableData[i]?.Photo;
 
-        //const r = Object.values(tableData[i]).filter(value => value !== undefined && value !== null && value !== "");
-        const r = Object.values(tableData[i]);
+        const r = Object.values(tableData[i]).filter(value => value !== undefined && value !== null && value !== "");
+        //const r = Object.values(tableData[i]);
 
         if (tableData[i].id_User != localStorage.getItem('userId')) {
           continue;
@@ -173,10 +173,7 @@ fetch("https://ovk-serverside.onrender.com/tableGetData", {
 // Функция для получения текста-описания таблицы
 function getTableDescription(tableName) {
   // Пример:
-  let tableDescription = "";
-  if (tableName === "Expenses") {
-    tableDescription = "Таблица с расходами.\nSum_Exp - необходимо ввести сумму.\nName_Exp - необходимо ввести название расхода.\nid_ExpType - необходимо ввести id Типа Расхода: 1 - Рестораны и кафе; 2 - Супермаркеты; 3 - ЖКХ,связь,интернет; 4 - Транспорт; 5 - Онлайн-маркеты; 6 - Путешествия; 7 - Развлечения и хобби; 8 - Прочие расходы; 9 - Комиссия\nDate_Exp - необходимо ввести id Даты Расхода: 1 - январь, ... , 12 - декабрь";
-  }
+  let tableDescription = "Таблица с расходами.\nSum_Exp - необходимо ввести сумму.\nName_Exp - необходимо ввести название расхода.\nid_ExpType - необходимо ввести id Типа Расхода: 1 - Рестораны и кафе; 2 - Супермаркеты; 3 - ЖКХ,связь,интернет; 4 - Транспорт; 5 - Онлайн-маркеты; 6 - Путешествия; 7 - Развлечения и хобби; 8 - Прочие расходы; 9 - Комиссия\nDate_Exp - необходимо ввести id Даты Расхода: 1 - январь, ... , 12 - декабрь";
 
   return tableDescription;
 }
